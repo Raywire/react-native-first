@@ -1,16 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+  const [name, setName] = useState('Ryan')
+  const [person, setPerson] = useState({
+    name: 'Mario',
+    age: 40
+  })
+
+  const clickHandler = () => {
+    setName('Wire')
+    setPerson({
+      name: 'Luigi',
+      age: 45
+    })
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.boldText}>Hello, World!</Text>
-      </View>
-      <View style={styles.body}>
-        <Text style={styles.boldText}>Lorem <Text>Test</Text> ipsum dolor sit amet.</Text>
-        <Text>Lorem ipsum dolor sit amet.</Text>
-        <Text>Lorem ipsum dolor sit amet.</Text>
+      <Text>Hello, my name is {name}!</Text>
+      <Text>His name is {person.name} and his age is {person.age}</Text>
+      <View style={styles.buttonContainer}>
+        <Button title='update state' onPress={clickHandler}/>
       </View>
     </View>
   );
@@ -23,16 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  header: {
-    backgroundColor: 'pink',
-    padding: 20
-  },
-  boldText: {
-    fontWeight: 'bold'
-  },
-  body: {
-    backgroundColor: 'yellow',
-    padding: 20,
-    fontWeight: 'bold' // Not inherited by Text
+  buttonContainer: {
+    marginTop: 20
   },
 });
