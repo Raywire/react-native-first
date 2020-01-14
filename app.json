@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "myproject",
-    "slug": "myproject",
+    "name": "react-native-first",
+    "slug": "react-native-first",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
